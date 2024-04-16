@@ -1,63 +1,60 @@
-.shoe-container {
-    display: flex;
-    justify-content: center;
-}
-
-.shoe {
-    width: 200px;
-    height: 300px;
-    perspective: 1000px; /* Adjust perspective for 3D effect */
-    cursor: pointer;
-}
-
-.shoe img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform-style: preserve-3d; /* Ensure child elements inherit 3D transformations */
-    transition: transform 0.5s; /* Add transition for smooth animation */
-}
-.shoe.flipped img {
-    transform: rotateY(180deg);
-}
 body {
-    background-color: black;
+    background: linear-gradient(to right, #03071e, #10002b); /* Cool gradient background */
     color: white;
-}
-
-.container {
+  }
+  
+  .container {
     position: relative;
     width: 100%;
     overflow: hidden;
-}
-
-.carousel {
+  }
+  
+  .shoe-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
-}
-
-.shoe {
-    width: 600px; /* Set a fixed width for consistency */
-    height: 600px; /* Set a fixed height for consistency */
+  }
+  
+  /* Responsive adjustments for mobile devices */
+  @media only screen and (max-width: 768px) {
+    .shoe {
+      width: 400px;
+      height: 400px;
+      margin: 0 auto; /* Center shoes on smaller screens */
+    }
+  
+    .product-details {
+      margin-top: 10px; /* Reduce top margin on small screens */
+    }
+  }
+  
+  .shoe {
+    width: 600px;
+    height: 600px;
     margin-right: 20px;
     overflow: hidden;
-    border: 1px solid #ccc; /* Add sleek border */
-    transition: transform 0.5s; /* Add transition for smooth animation */
-    transition: transform 0.5s;
-    /* Hide overflow to prevent images from protruding */
-}
-
-.shoe img {
+    border: 1px solid rgba(255, 255, 255, 0.2); /* White border with opacity */
+    transition: transform 0.5s, box-shadow 0.3s;
+  }
+  
+  .shoe img {
     width: 100%;
-    height: auto; /* Allow the height to adjust proportionally */
-    object-fit: contain; 
-    transform-style: preserve-3d; 
-}
-
-
-
-
-button {
+    height: auto;
+    object-fit: contain;
+    transform-style: preserve-3d;
+  }
+  
+  .shoe:hover,
+  .shoe.active {
+    transform: rotateY(180deg); /* Apply flip animation */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Add subtle hover shadow */
+  }
+  
+  button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -66,37 +63,35 @@ button {
     color: white;
     font-size: 24px;
     cursor: pointer;
-}
-
-#prevBtn {
+    opacity: 0.7; /* Semi-transparent buttons */
+  }
+  
+  button:hover {
+    opacity: 1; /* Full opacity on hover */
+  }
+  
+  #prevBtn {
     left: 10px;
-}
-
-#nextBtn {
+  }
+  
+  #nextBtn {
     right: 10px;
-}
-.product-details {
+  }
+  
+  .product-details {
     text-align: center;
     margin-top: 20px;
-}
-
-.product-details h2 {
+  }
+  
+  .product-details h2 {
     margin-bottom: 10px;
-}
-
-.product-details p {
+  }
+  
+  .product-details p {
     font-size: 24px;
     margin-bottom: 20px;
-}
-
-.product-details button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-.shoe.active {
-    transform: rotateY(180deg); /* Apply flip animation to active shoe */
-}
+  }
+  
+  .product-details button {
+    padding: 10
+  }  
